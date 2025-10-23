@@ -1,0 +1,24 @@
+/* FeaturedBooks.css */
+.featured-section {
+  padding: 20px 0;
+}
+
+.books-grid-featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .books-grid-featured {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .books-grid-featured {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}

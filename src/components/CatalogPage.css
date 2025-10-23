@@ -1,0 +1,312 @@
+/* CatalogPage.css - SUPER RAPI */
+.catalog-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 0;
+}
+
+/* HEADER - SIMPLE & CLEAN */
+.catalog-header {
+  background: #2C5530;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.header-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.catalog-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: white;
+}
+
+.catalog-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* STATS - SIMPLE GRID */
+.catalog-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  max-width: 400px;
+  margin: 25px auto 0;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+.stat-icon {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 2px;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+}
+
+/* CONTROLS - CLEAN LAYOUT */
+.catalog-controls {
+  background: white;
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.sort-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-label {
+  color: #495057;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.sort-select {
+  padding: 8px 12px;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  background: white;
+  color: #495057;
+  font-size: 14px;
+  min-width: 140px;
+  cursor: pointer;
+}
+
+/* CONTENT AREA - FIXED WIDTH */
+.catalog-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.books-grid-header {
+  margin-bottom: 20px;
+}
+
+.results-count {
+  color: #6c757d;
+  font-weight: 600;
+  font-size: 14px;
+  background: #f8f9fa;
+  padding: 8px 16px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+/* BOOKS GRID - SUPER RAPI & KONSISTEN */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+/* Pastikan semua card sama besar */
+.books-grid > * {
+  min-width: 0; /* Penting untuk consistency */
+}
+
+/* NO BOOKS STATE */
+.no-books {
+  background: white;
+  padding: 60px 20px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.no-books-content {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.no-books-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.no-books h3 {
+  font-size: 1.2rem;
+  color: #2C5530;
+  margin: 0 0 8px 0;
+}
+
+.no-books p {
+  color: #6c757d;
+  margin: 0 0 20px 0;
+  font-size: 0.9rem;
+}
+
+.reset-filters-btn {
+  background: #2C5530;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* LOADING STATE */
+.catalog-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #2C5530;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+.catalog-loading p {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* RESPONSIVE - TETAP RAPI */
+@media (max-width: 1024px) {
+  .books-grid {
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog-header {
+    padding: 30px 15px;
+  }
+  
+  .catalog-title {
+    font-size: 1.7rem;
+  }
+  
+  .catalog-controls {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 15px;
+    gap: 15px;
+  }
+  
+  .sort-controls {
+    justify-content: space-between;
+  }
+  
+  .sort-select {
+    flex: 1;
+    min-width: auto;
+  }
+  
+  .catalog-stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-width: 250px;
+  }
+  
+  .stat-card {
+    padding: 12px;
+  }
+  
+  .books-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  .catalog-content {
+    padding: 20px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalog-header {
+    padding: 25px 12px;
+  }
+  
+  .catalog-title {
+    font-size: 1.5rem;
+  }
+  
+  .catalog-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .books-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .stat-number {
+    font-size: 1.1rem;
+  }
+  
+  .catalog-content {
+    padding: 15px 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .books-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .catalog-controls {
+    padding: 12px;
+  }
+  
+  .sort-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  
+  .sort-label {
+    text-align: center;
+  }
+}
